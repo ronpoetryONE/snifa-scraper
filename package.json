@@ -1,0 +1,24 @@
+{
+  "name": "scraper-ts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Scraper con TypeScript, Axios y Cheerio",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx -p typescript tsc && node dist/main.js",
+    "dev": "npx tsx src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.17.0",
+    "cheerio": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3"
+  }
+}
