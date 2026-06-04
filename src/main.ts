@@ -15,7 +15,7 @@ import * as cheerio from 'cheerio';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
-import { DocumentoExpediente, Expediente } from './types.js';
+import { DocumentoExpediente, Expediente, FailedDownloadRecord } from './types.js';
 import {
     DOCUMENTO_FILA,
     DOCUMENTO_NOMBRE,
@@ -34,21 +34,6 @@ const FAILED_DOWNLOADS_FILE = path.join(FAILED_DOWNLOADS_DIR, 'failed-downloads.
 const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
-type FailedDownloadRecord = {
-    timestamp: string;
-    expedienteId: string;
-    rol: string;
-    documentoNombre: string;
-    documentoTipo: string;
-    documentoFecha: string;
-    documentoHref: string;
-    docUrl: string;
-    rutaDestino: string;
-    errorMessage: string;
-    attempts: number;
-    status: string;
-};
 
 let failedDownloads: FailedDownloadRecord[] = [];
 

@@ -1,4 +1,22 @@
 /**
+ * Registro de descarga fallida con detalles del error y contexto.
+ */
+export type FailedDownloadRecord = {
+    timestamp: string;
+    expedienteId: string;
+    rol: string;
+    documentoNombre: string;
+    documentoTipo: string;
+    documentoFecha: string;
+    documentoHref: string;
+    docUrl: string;
+    rutaDestino: string;
+    errorMessage: string;
+    attempts: number;
+    status: string;
+};
+
+/**
  * Información de un documento asociado a un expediente.
  */
 export interface DocumentoExpediente {
